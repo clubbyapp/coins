@@ -1,9 +1,21 @@
 package com.cryptoboard.coins.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Coin {
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
+    private long id;
+    @JsonProperty("id")
+    private String shortcut;
     private String name;
     private String symbol;
     private int rank;
@@ -24,12 +36,20 @@ public class Coin {
     private double _24h_volume_eur;
     private double market_cap_eur;
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public String getShortcut() {
+        return shortcut;
+    }
+
+    public void setShortcut(String shortcut) {
+        this.shortcut = shortcut;
     }
 
     public String getName() {

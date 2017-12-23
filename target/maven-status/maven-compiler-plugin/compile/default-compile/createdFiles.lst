@@ -1,3 +1,4 @@
 com/cryptoboard/coins/CoinsApplication.class
 com/cryptoboard/coins/controller/MainController.class
+com/cryptoboard/coins/model/CoinRepository.class
 com/cryptoboard/coins/model/Coin.class
