@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Kalorienrechner</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+    <!--<link rel="stylesheet" href="../static/js/EasyAutocomplete/easy-autocomplete.min.css" th:href="@{/js/EasyAutocomplete/easy-autocomplete.min.css}"/>-->
+</head>
+<body>
+<div class="container">
+    <h1>Hallo Alex</h1>
+<!--    <p>
+        2000 kcal max.
+        <button type="button" class="btn btn-default btn-sm">&Auml;ndern</button>
+    </p>
+    <form>
+        <div class="form-row">
+            <label for="tabellenEintrag" class="xcol-form-label">+</label>
+            <div class="form-group col-md-5">
+                <input type="text" class="form-control" id="tabellenEintrag" placeholder="Lebensmittel oder Sport"/>
+            </div>
+            <div class="form-group col-md-3">
+                <input type="text" class="form-control" id="menge" placeholder="Menge"/>
+            </div>
+            <div class="form-group col-md-2">
+                <input type="text" readonly="readonly" class="form-control-plaintext" id="einheit" value="Einheit"/>
+            </div>
+            <div class="form-group col-md-2">
+                <button type="submit" class="btn btn-primary">Hinzuf&uuml;gen</button>
+            </div>
+        </div>
+    </form>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Info</th>
+        <th>Kalorien pro Einheit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.info}"></td>
+        <td th:text="${item.kalorienProEinheit}"></td>
+    </tr>
+    </tbody>
+    </table>-->
+    <!--    <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Menge</th>
+                <th>Kalorien</th>
+                <th>Entfernen</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Bier</td>
+                <td>500</td>
+                <td>1000</td>
+                <td><button type="button" class="btn btn-sm btn-danger">X</button></td>
+            </tr>
+            <tr>
+                <td>Brot</td>
+                <td>100</td>
+                <td>10</td>
+                <td><button type="button" class="btn btn-sm btn-danger">X</button></td>
+            </tr>
+            <tr>
+                <td>Schnaps</td>
+                <td>0,02</td>
+                <td>1</td>
+                <td><button type="button" class="btn btn-sm btn-danger">X</button></td>
+            </tr>
+            </tbody>
+        </table>-->
+    <p>Heute konsumiert: 1011 kcal</p>
+    <p>Noch verfügbar: 989 kcal</p>
+</div>
+<script th:src="@{https://code.jquery.com/jquery-3.2.1.slim.min.js}" src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js}" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js}" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<!--http://easyautocomplete.com-->
+<script src="../static/js/EasyAutocomplete/jquery.easy-autocomplete.min.js" th:src="@{/js/EasyAutocomplete/jquery.easy-autocomplete.min.js}"></script>
+<script th:inline="javascript">
+var allItems = /*[[${allItems}]]*/ null;
+var options = {
+    data: allItems,
+    getValue: "name",
+    list: {
+        match: {
+            enabled: true
+        }
+    }
+};
+$("#tabellenEintrag").easyAutocomplete(options);
+</script>
+</body>
+</html>

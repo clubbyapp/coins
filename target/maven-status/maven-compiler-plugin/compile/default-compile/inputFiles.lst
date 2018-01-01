@@ -1,1 +1,4 @@
 /home/tobi/IntelliJProjects/coins/src/main/java/com/cryptoboard/coins/CoinsApplication.java
+/home/tobi/IntelliJProjects/coins/src/main/java/com/cryptoboard/coins/model/Coin.java
+/home/tobi/IntelliJProjects/coins/src/main/java/com/cryptoboard/coins/model/CoinRepository.java
+/home/tobi/IntelliJProjects/coins/src/main/java/com/cryptoboard/coins/controller/MainController.java
