@@ -32,4 +32,20 @@ public class MainController {
 
         return;
     }
+
+    @RequestMapping(value = "/overview", method = RequestMethod.GET)
+    public String getOverview(Model model) {
+        final double bitcoinDeBTCAmount = 0.166656;
+        final double bitcoinDeBCHAmount = 0.06669657;
+        final double bitcoinDeBTGAmount = 0.0537848;
+        final double bitcoinDeETHAmount = 2.20224;
+        final double krakenComXRPAmount = 650.0;
+        final double krakenComXMRAmount = 1.0;
+        final double krakenComDASHAmount = 0.166656;
+        final double paperwalletBTCAmount = 0.166656;
+        final double freebitcoInBTCAmount = 0.166656;
+
+
+        return "index";
+    }
 }
